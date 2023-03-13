@@ -8,12 +8,11 @@ public class Account
     private int account_id;
     private bool activated;
 
-    public Account(string name, string password, int account_id)
+    public Account(string name, string password)
     {
         this.name = name;
         this.password = password;
-        this.account_id = account_id;
-        this.balance = 0;
+        this.balance = 0.0;
         this.activated = true;
     }
 
@@ -49,6 +48,11 @@ public class Account
     public int GetAccountID()
     {
         return this.account_id;
+    }
+
+    public double GetBalance()
+    {
+        return this.balance;
     }
 
     public string GetName()

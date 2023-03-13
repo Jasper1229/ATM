@@ -2,16 +2,17 @@
 
 public class AccountStorage
 {
-    private Account[] accounts;
+    private List<Account> _accounts = new List<Account>();
 
-    public void StoreAccount(Account account)
+    public Account StoreAccount(Account account)
     {
-        accounts[accounts.Length] = account;
-        accounts[accounts.Length].SetID(accounts.Length);
+        _accounts.Add(account);
+        _accounts[_accounts.Count - 1].SetID(_accounts.Count - 1);
+        return _accounts[_accounts.Count - 1];
     }
 
     public Account GetAccount(int id)
     {
-        return accounts[id];
+        return _accounts[id];
     }
 }
